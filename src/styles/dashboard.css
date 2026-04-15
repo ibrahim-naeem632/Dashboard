@@ -1,0 +1,142 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* HEADER */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.dashboard-header p {
+  font-size: 14px;
+  color: var(--secondary);
+  margin-top: 4px;
+}
+
+/* BUTTON */
+.primary-btn {
+  background: var(--primary);
+  color: var(--card);
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.primary-btn:hover {
+  opacity: 0.9;
+}
+
+/* STATS */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* MAIN GRID */
+.main-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+.left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* PANEL */
+.panel {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.panel h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* CHART */
+.chart-box {
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+/* TOOLTIP FONT */
+.recharts-wrapper {
+  font-size: 12px;
+}
+
+.recharts-tooltip-label {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+/* ACTIVITY */
+.activity-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  font-size: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.activity-item:last-child {
+  border-bottom: none;
+}
+
+.activity-item p {
+  color: var(--text);
+}
+
+.activity-item span {
+  color: var(--secondary);
+}
+.chart-toggle {
+  display: flex;
+  gap: 8px;
+}
+
+.chart-toggle button {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.chart-toggle .active {
+  background: var(--primary);
+  color: white;
+  border: none;
+}

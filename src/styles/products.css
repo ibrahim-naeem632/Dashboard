@@ -1,0 +1,234 @@
+.products {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── HEADER ── */
+.products-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.products-header h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.products-header p {
+  font-size: 13px;
+  color: var(--secondary);
+  margin-top: 4px;
+}
+
+/* ── FILTERS ── */
+.products-filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.products-filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--secondary);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.products-filter-btn:hover {
+  background: var(--bg);
+  color: var(--text);
+  border-color: var(--secondary);
+}
+
+.products-filter-active {
+  background: var(--primary);
+  color: var(--card);
+  border-color: var(--primary);
+}
+
+.products-filter-active:hover {
+  background: var(--primary);
+  color: var(--card);
+}
+
+.products-filter-count {
+  font-size: 11px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 1px 7px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.products-filter-active .products-filter-count {
+  background: rgba(255, 255, 255, 0.25);
+  color: var(--card);
+}
+
+/* ── STOCK INDICATORS ── */
+.products-stock {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.products-stock-low {
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+.products-stock-out {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+/* ── MODALS ── */
+.products-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+  animation: productsModalFadeIn 0.15s ease;
+}
+
+@keyframes productsModalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.products-modal {
+  background: var(--card);
+  padding: 28px;
+  border-radius: 16px;
+  width: 460px;
+  max-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  animation: productsModalSlideUp 0.2s ease;
+}
+
+@keyframes productsModalSlideUp {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.products-modal h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.products-modal-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.products-modal-field label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--secondary);
+}
+
+.products-modal-field input,
+.products-modal-field select {
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 14px;
+  color: var(--text);
+  background: var(--bg);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.products-modal-field input:focus,
+.products-modal-field select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* Two fields side by side */
+.products-modal-row {
+  display: flex;
+  gap: 12px;
+}
+
+.products-modal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.products-modal-btn {
+  flex: 1;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+  border: none;
+}
+
+.products-modal-cancel {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.products-modal-cancel:hover {
+  background: var(--border);
+}
+
+.products-modal-confirm {
+  background: var(--primary);
+  color: var(--card);
+}
+
+.products-modal-confirm:hover {
+  opacity: 0.9;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .products-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .products-filters {
+    width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 4px;
+  }
+
+  .products-filter-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .products-modal-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
