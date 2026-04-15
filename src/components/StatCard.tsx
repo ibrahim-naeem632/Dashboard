@@ -84,11 +84,11 @@ const StatCard: React.FC<StatCardProps> = ({
     requestAnimationFrame(step);
   }, [value]);
 
-  useEffect(() => {
-    if (!loading) {
-      animateValue();
-    }
-  }, [loading, animateValue]);
+useEffect(() => {
+  if (!loading && !hasAnimated) {
+    animateValue();
+  }
+}, [loading, animateValue, hasAnimated]);
 
   // ─── SPARKLINE: normalize to percentage heights ───
   const normalizedSparkline = (() => {

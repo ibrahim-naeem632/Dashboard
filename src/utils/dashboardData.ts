@@ -5,7 +5,7 @@
 export interface Stat {
   title: string;
   value: number;
-  change: number;
+  change: string | number;
   isCurrency?: boolean;
   icon?: string;
   sparkline?: number[];
@@ -39,21 +39,21 @@ export const stats: Stat[] = [
   {
     title: "Orders",
     value: 1320,
-    change: 8,
+    change: "8",
     icon: "📦",
     sparkline: [5, 10, 8, 12, 9, 15],
   },
   {
     title: "Customers",
     value: 890,
-    change: 5,
+    change: "5",
     icon: "👤",
     sparkline: [3, 6, 4, 8, 7, 10],
   },
   {
     title: "Refunds",
     value: 1200,
-    change: -2,
+    change: "-2",
     isCurrency: true,
     icon: "↩️",
     sparkline: [8, 6, 7, 5, 4, 3],

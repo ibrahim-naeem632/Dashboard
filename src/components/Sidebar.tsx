@@ -62,7 +62,7 @@ const menuSections: MenuSection[] = [
 
 // ─── MOCK USER ───
 const currentUser: UserInfo = {
-  name: "Ali Hassan",
+  name: "Coder Creative",
   role: "Admin",
 };
 

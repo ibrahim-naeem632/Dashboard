@@ -70,7 +70,7 @@ const [range, setRange] = useState<"daily" | "weekly" | "monthly">("weekly");
                 ? formatCurrency(item.value)
                 : item.value.toString()
             }
-            change={item.change}
+            change={Number(item.change)}
             icon={item.icon}
             sparklineData={item.sparkline}
           />
@@ -125,9 +125,12 @@ const [range, setRange] = useState<"daily" | "weekly" | "monthly">("weekly");
                   <YAxis stroke="var(--secondary)" />
 
                   <Tooltip
-                    formatter={(value: number) =>
-                      formatCurrency(value)
-                    }
+                   formatter={(value) => {
+  if (typeof value === "number") {
+    return formatCurrency(value);
+  }
+  return value;
+}}
                     contentStyle={{
                       background: "#fff",
                       borderRadius: "12px",

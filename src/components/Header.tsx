@@ -49,7 +49,7 @@ const mockNotifications: Notification[] = [
 ];
 
 const currentUser: UserInfo = {
-  name: "Ali Hassan",
+  name: "Coder Creative",
   role: "Admin",
 };
 
