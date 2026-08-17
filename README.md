@@ -1,32 +1,47 @@
-# 🚀 Dashboard Web Application
+# Dashboard Pro
 
-A modern and responsive dashboard built using **React, TypeScript, and CSS**, designed with a clean UI and scalable architecture. This project demonstrates frontend expertise with plans for backend integration using Node.js and MongoDB.
+## Quick Start
 
----
+### Backend (Terminal 1)
+```bash
+cd backend
+npm install
+npm run dev
+# Server runs at http://localhost:5000
+```
 
-## 🔥 Features
+### Frontend (Terminal 2)
+```bash
+cd frontend
+npm install
+npm run dev
+# App runs at http://localhost:5173
+```
 
-- 📊 Interactive Dashboard UI
-- ⚡ Fast and responsive design
-- 📱 Fully mobile-friendly layout
-- 🎨 Clean and modern user interface
-- 🧩 Component-based architecture
-- 🔄 Ready for backend integration
+## Login
+- Email: `admin@gmail.com`
+- Password: `1234`
 
----
+## Backend Modes
+- **Without MongoDB** (default): Works out of the box — data in memory
+- **With MongoDB**: Add `MONGODB_URI=mongodb://localhost:27017/dashboard` to `backend/.env`
 
-## 🛠️ Tech Stack
-
-- **Frontend:** React.js, TypeScript, CSS
-- **Backend (Planned):** Node.js, Express.js
-- **Database (Planned):** MongoDB
-
----
-
-## 📸 Live Demo
-
-👉 https://coder-creative.netlify.app/
-
----
-
-## 📂 Project Structure
+## API Endpoints
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | /api/auth/login | Login |
+| GET  | /api/auth/me    | Get current user |
+| GET  | /api/products   | List products |
+| POST | /api/products   | Create product |
+| PUT  | /api/products/:id | Update product |
+| DELETE | /api/products/:id | Delete product |
+| GET  | /api/orders     | List orders |
+| POST | /api/orders     | Create order |
+| PUT  | /api/orders/:id | Update order |
+| DELETE | /api/orders/:id | Delete order |
+| GET  | /api/customers  | List customers |
+| POST | /api/customers  | Create customer |
+| PUT  | /api/customers/:id | Update customer |
+| DELETE | /api/customers/:id | Delete customer |
+| GET  | /api/analytics/stats | Dashboard stats |
+| GET  | /api/health     | Health check |

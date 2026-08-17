@@ -1,0 +1,14 @@
+.layout{display:flex;height:100vh;width:100%;overflow:hidden;}
+.layout-right{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0;}
+.layout-content{flex:1;padding:28px;background:var(--bg);overflow-y:auto;}
+@media(max-width:768px){.layout-content{padding:16px;}}
+
+/* Mobile overlay */
+.mobile-overlay {
+  position: fixed; inset: 0;
+  background: rgba(7,11,20,.55);
+  backdrop-filter: blur(3px);
+  z-index: 99;
+  animation: fadeIn .2s ease;
+}
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
